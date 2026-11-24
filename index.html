@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 22nd Birthday, Ibrahim 🌷</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;600;700&family=Fredoka:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        handwriting: ['Caveat', 'cursive'],
+                        arabic: ['Amiri', 'serif'],
+                        meme: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        sunset: {
+                            peach: '#FFE5D9',
+                            rose: '#FFCAD4',
+                            coral: '#F4ACB7',
+                            lavender: '#D8E2DC',
+                            cream: '#FFF9F5',
+                            plum: '#4A354F',
+                            gold: '#F6BD60'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
+        body {
+            background: linear-gradient(135deg, #FFF5F0 0%, #FFE4E8 35%, #F3E5F5 70%, #E0F2FE 100%);
+            background-attachment: fixed;
+            color: #4A354F;
+            margin: 0;
+        }
+
+        main, section, header, footer {
+            max-width: 100%;
+            overflow-x: clip;
+        }
+
+        .frame-container {
+            width: 100%;
+            max-width: 1120px;
+            margin-inline: auto;
+            padding-inline: clamp(16px, 4vw, 48px);
+        }
+
+        /* Dreamy Glassmorphism */
+        .dream-card {
+            background: rgba(255, 255, 255, 0.84);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1.5px solid rgba(255, 255, 255, 0.94);
+            box-shadow: 0 18px 40px -12px rgba(244, 172, 183, 0.28);
+            max-width: 100%;
+        }
+
+        /* Polaroid Styling */
+        .polaroid {
+            background: #FFFFFF;
+            padding: 14px 14px 28px 14px;
+            border-radius: 16px;
+            box-shadow: 0 20px 35px -10px rgba(74, 53, 79, 0.16), 0 4px 12px rgba(244, 172, 183, 0.25);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+            max-width: 100%;
+        }
+        .polaroid:hover {
+            transform: translateY(-6px) rotate(0deg) !important;
+            box-shadow: 0 28px 45px -10px rgba(74, 53, 79, 0.24);
+        }
+        .polaroid-media-frame {
+            aspect-ratio: 4 / 3;
+            max-height: 290px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .polaroid-media-frame img,
+        .polaroid-media-frame video {
+            width: 100%;
+            height: 100%;
+            max-height: 290px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Washi Tape Effect */
+        .washi-tape {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 110px;
+            height: 28px;
+            background: rgba(255, 202, 212, 0.78);
+            backdrop-filter: blur(4px);
+            border-left: 2px dashed rgba(255,255,255,0.6);
+            border-right: 2px dashed rgba(255,255,255,0.6);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            z-index: 20;
+        }
+
+        /* Die-Cut Glossy Vinyl Cat Meme Sticker Styling */
+        .cat-sticker {
+            filter: drop-shadow(0 8px 14px rgba(74, 53, 79, 0.22));
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+            cursor: pointer;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .cat-sticker:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 12px 20px rgba(244, 114, 182, 0.4));
+            z-index: 35;
+        }
+
+        /* =========================================================
+           SIGNATURE ANIMATIONS FOR ALL 6 MEME CATS
+           ========================================================= */
+
+        /* 1. Bongo Cat: Tapping paws + dancing head/body + floating music notes */
+        @keyframes bongoSlapLeft {
+            0%, 100% { transform: translateY(-2px) rotate(-6deg); }
+            50% { transform: translateY(8px) rotate(6deg); }
+        }
+        @keyframes bongoSlapRight {
+            0%, 100% { transform: translateY(8px) rotate(-6deg); }
+            50% { transform: translateY(-2px) rotate(6deg); }
+        }
+        @keyframes bongoDanceBody {
+            0%, 100% { transform: rotate(-4deg) translateY(0px); }
+            50% { transform: rotate(4deg) translateY(-4px); }
+        }
+        @keyframes musicNoteFloat {
+            0%, 100% { transform: translateY(0) scale(0.95); opacity: 0.75; }
+            50% { transform: translateY(-8px) scale(1.15); opacity: 1; }
+        }
+        .cat-bongo .paw-left { animation: bongoSlapLeft 0.32s infinite ease-in-out; transform-origin: center; }
+        .cat-bongo .paw-right { animation: bongoSlapRight 0.32s infinite ease-in-out; transform-origin: center; }
+        .cat-bongo .bongo-body { animation: bongoDanceBody 0.64s infinite ease-in-out; transform-origin: bottom center; }
+        .cat-bongo .music-notes { animation: musicNoteFloat 0.8s infinite ease-in-out; }
+        .cat-bongo.burst-action .paw-left { animation-duration: 0.14s; }
+        .cat-bongo.burst-action .paw-right { animation-duration: 0.14s; }
+        .cat-bongo.burst-action .bongo-body { animation-duration: 0.28s; }
+
+        /* 2. Pop Cat: Mouth pops wide open with POP! burst */
+        @keyframes popMouthCycle {
+            0%, 55%, 100% { transform: scaleY(0.18) scaleX(0.75); }
+            65%, 90% { transform: scaleY(1.12) scaleX(1.08); }
+        }
+        @keyframes popBadgeCycle {
+            0%, 55%, 100% { transform: scale(0) rotate(-15deg); opacity: 0; }
+            65%, 90% { transform: scale(1.15) rotate(12deg); opacity: 1; }
+        }
+        @keyframes popHeadRecoil {
+            0%, 55%, 100% { transform: translateY(0) scale(1); }
+            68% { transform: translateY(-7px) scale(1.06, 0.96); }
+            85% { transform: translateY(0) scale(1); }
+        }
+        .cat-pop .pop-mouth { animation: popMouthCycle 1.6s infinite ease-in-out; transform-origin: 70px 96px; }
+        .cat-pop .pop-badge { animation: popBadgeCycle 1.6s infinite ease-in-out; transform-origin: 108px 30px; }
+        .cat-pop .pop-head { animation: popHeadRecoil 1.6s infinite ease-in-out; transform-origin: center bottom; }
+        .cat-pop.burst-action .pop-mouth { animation-duration: 0.38s; }
+        .cat-pop.burst-action .pop-badge { animation-duration: 0.38s; }
+        .cat-pop.burst-action .pop-head { animation-duration: 0.38s; }
+
+        /* 3. Crying Thumbs Up -> Happy Kissy Face sending hearts & kisses */
+        @keyframes kissyPucker {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            40% { transform: scale(1.08) rotate(-4deg); }
+            70% { transform: scale(1.12) rotate(4deg); }
+        }
+        @keyframes thumbsPulse {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(-10deg) scale(1.12); }
+        }
+        @keyframes kissHeartDrift {
+            0% { transform: translate(0, 0) scale(0.7); opacity: 0; }
+            30% { opacity: 1; }
+            100% { transform: translate(12px, -22px) scale(1.2); opacity: 0; }
+        }
+        .cat-kissy .kissy-head { animation: kissyPucker 1.4s infinite ease-in-out; transform-origin: center; }
+        .cat-kissy .kissy-thumb { animation: thumbsPulse 1.1s infinite ease-in-out; transform-origin: 95px 105px; }
+        .cat-kissy .kiss-heart-1 { animation: kissHeartDrift 1.5s infinite ease-out; }
+        .cat-kissy .kiss-heart-2 { animation: kissHeartDrift 1.5s infinite ease-out 0.6s; }
+        .cat-kissy.burst-action .kissy-head { animation-duration: 0.45s; }
+
+        /* 4. Polite Cat: Cute head tilt, glowing blush & twinkling sparkles */
+        @keyframes politeCuteTilt {
+            0%, 100% { transform: rotate(-5deg) translateY(0px); }
+            50% { transform: rotate(6deg) translateY(-4px); }
+        }
+        @keyframes sparkleTwinkle {
+            0%, 100% { transform: scale(0.75) rotate(0deg); opacity: 0.5; }
+            50% { transform: scale(1.25) rotate(25deg); opacity: 1; }
+        }
+        .cat-polite .polite-head { animation: politeCuteTilt 2s infinite ease-in-out; transform-origin: 70px 108px; }
+        .cat-polite .polite-sparkle { animation: sparkleTwinkle 1.3s infinite ease-in-out; transform-origin: center; }
+        .cat-polite.burst-action .polite-head { animation-duration: 0.55s; }
+
+        /* 5. Maxwell Loaf: 360-degree turntable spin + rhythmic groove dance */
+        @keyframes maxwellTurntable {
+            0% { transform: rotateY(0deg) translateY(0px) rotate(-3deg); }
+            25% { transform: rotateY(90deg) translateY(-6px) rotate(3deg); }
+            50% { transform: rotateY(180deg) translateY(0px) rotate(-3deg); }
+            75% { transform: rotateY(270deg) translateY(-6px) rotate(3deg); }
+            100% { transform: rotateY(360deg) translateY(0px) rotate(-3deg); }
+        }
+        .cat-maxwell .maxwell-spinner {
+            animation: maxwellTurntable 3.2s infinite linear;
+            transform-origin: center;
+            transform-style: preserve-3d;
+        }
+        .cat-maxwell.burst-action .maxwell-spinner {
+            animation-duration: 0.95s;
+        }
+
+        /* 6. Happy Happy Happy Cat: Signature jumping double-paw dance */
+        @keyframes happyJumpDance {
+            0%, 100% { transform: translateY(2px) scale(1.06, 0.94) rotate(-3deg); }
+            45% { transform: translateY(-16px) scale(0.95, 1.08) rotate(3deg); }
+        }
+        @keyframes happyPawWave {
+            0%, 100% { transform: rotate(-6deg); }
+            50% { transform: rotate(8deg); }
+        }
+        .cat-happy .happy-dancer { animation: happyJumpDance 0.52s infinite ease-in-out; transform-origin: bottom center; }
+        .cat-happy .happy-paws { animation: happyPawWave 0.26s infinite alternate ease-in-out; transform-origin: center; }
+        .cat-happy.burst-action .happy-dancer { animation-duration: 0.28s; }
+
+        /* 3D Flip Card Styling for Quran Ayahs */
+        .flip-card {
+            perspective: 1200px;
+            min-height: 335px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 335px;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 22px;
+            padding: 20px 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow-y: auto;
+        }
+        .flip-card-front {
+            background: linear-gradient(145deg, rgba(255,255,255,0.94), rgba(255,232,238,0.9));
+            border: 2px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 12px 28px rgba(244, 172, 183, 0.25);
+        }
+        .flip-card-back {
+            background: linear-gradient(145deg, #4A354F, #6B4C73);
+            color: #FFF9F5;
+            transform: rotateY(180deg);
+            box-shadow: 0 15px 30px rgba(74, 53, 79, 0.3);
+            border: 2px solid rgba(246, 189, 96, 0.5);
+        }
+
+        /* Candle Flame & Rising Smoke Animations */
+        @keyframes flicker {
+            0%, 100% { transform: scale(1) rotate(-2deg); opacity: 1; }
+            50% { transform: scale(1.12, 0.92) rotate(3deg); opacity: 0.9; }
+        }
+        .candle-flame {
+            animation: flicker 0.9s infinite alternate ease-in-out;
+            transform-origin: bottom center;
+        }
+        .flame-out {
+            opacity: 0 !important;
+            transform: scale(0) !important;
+            transition: all 0.35s ease-out;
+        }
+        @keyframes smokeRise {
+            0% { transform: translateY(0) scale(0.6); opacity: 0; }
+            30% { opacity: 0.75; }
+            100% { transform: translateY(-34px) translateX(6px) scale(1.4); opacity: 0; }
+        }
+        .smoke-wisp {
+            opacity: 0;
+        }
+        .smoke-active {
+            animation: smokeRise 2.2s ease-out forwards;
+        }
+
+        /* Floating Petals & Kissy Hearts */
+        @keyframes floatPetal {
+            0% { transform: translateY(-8vh) rotate(0deg) translateX(0px); opacity: 0; }
+            15% { opacity: 0.9; }
+            85% { opacity: 0.9; }
+            100% { transform: translateY(108vh) rotate(360deg) translateX(24px); opacity: 0; }
+        }
+        .floating-petal {
+            position: fixed;
+            top: -50px;
+            pointer-events: none;
+            z-index: 40;
+            animation: floatPetal linear infinite;
+        }
+
+        @keyframes floatUpHeart {
+            0% { transform: translateY(0) scale(0.6) rotate(-10deg); opacity: 1; }
+            100% { transform: translateY(-140px) scale(1.3) rotate(12deg); opacity: 0; }
+        }
+        .floating-kiss-heart {
+            position: fixed;
+            pointer-events: none;
+            z-index: 60;
+            font-size: 24px;
+            animation: floatUpHeart 1.4s ease-out forwards;
+        }
+
+        /* Pop-up Toast Notification (Centered & Bounded Inside Full View) */
+        @keyframes popToast {
+            0% { transform: translate(-50%, 20px) scale(0.92); opacity: 0; }
+            15% { transform: translate(-50%, 0) scale(1.02); opacity: 1; }
+            25% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+            85% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+            100% { transform: translate(-50%, -10px) scale(0.96); opacity: 0; }
+        }
+        .toast-active {
+            animation: popToast 3.4s forwards ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-pink-200 selection:text-purple-900">
+
+    <!-- Floating Tulip Petals & Confetti Container -->
+    <div id="petal-container" class="fixed inset-0 pointer-events-none overflow-hidden z-40"></div>
+
+    <!-- Custom Interactive Toast / Meme Speech Notification -->
+    <div id="toast-box" style="left: 50%; transform: translateX(-50%); width: calc(100vw - 32px); max-width: 520px;" class="fixed bottom-6 z-50 pointer-events-none opacity-0 transition-opacity">
+        <div class="bg-white/95 backdrop-blur-md text-sunset-plum px-5 py-3.5 rounded-3xl shadow-2xl border-2 border-pink-300 flex items-center gap-3 text-sm sm:text-base font-semibold">
+            <span id="toast-icon" class="w-12 h-12 shrink-0 flex items-center justify-center">🌷</span>
+            <span id="toast-msg" class="leading-snug min-w-0 break-words">Happy 22nd Birthday Ibrahim!</span>
+        </div>
+    </div>
+
+    <main class="w-full overflow-x-clip">
+        <!-- HERO & QUICK NAVIGATION -->
+        <header class="pt-10 pb-8 text-center frame-container">
+            <div class="relative inline-block max-w-3xl mx-auto px-2 sm:px-14">
+                <!-- Bongo Cat Sticker Left -->
+                <div onclick="triggerCatMeme('bongo', this, event)" title="Tap Bongo Cat!" class="cat-sticker cat-bongo hidden md:block absolute top-0 left-0 w-24 h-24 -rotate-12" data-cat="bongo"></div>
+
+                <!-- Happy Cat Sticker Right -->
+                <div onclick="triggerCatMeme('happy', this, event)" title="Tap Happy Cat!" class="cat-sticker cat-happy hidden md:block absolute top-0 right-0 w-24 h-24 rotate-12" data-cat="happy"></div>
+
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-sunset-plum leading-tight">
+                    Happy 22nd Birthday, <br>
+                    <span class="bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 bg-clip-text text-transparent">My Sweet Ibrahim</span>
+                </h1>
+            </div>
+
+            <p class="mt-5 max-w-2xl mx-auto text-base sm:text-lg text-sunset-plum/85 leading-relaxed font-medium">
+                Today isn't about deadlines, code, or taking care of everyone else. Today is purely about celebrating the kindest, gentlest, most handsome soul in my universe. Here is a dreamy little corner filled with blooming tulips, our favorite memories, dancing meme cats, and prayers for your 22nd year, my chellakutty. 🌷✨
+            </p>
+
+            <!-- Quick Navigation Pills -->
+            <nav class="mt-8 flex flex-wrap justify-center gap-2.5 sm:gap-3 max-w-full">
+                <a href="#cat-universe" class="px-4 py-2.5 rounded-full bg-white/90 hover:bg-pink-50 text-sunset-plum font-semibold text-xs sm:text-sm shadow-sm border border-pink-200 transition">🐾 Dancing Cat Universe</a>
+                <a href="#scrapbook" class="px-4 py-2.5 rounded-full bg-white/90 hover:bg-pink-50 text-sunset-plum font-semibold text-xs sm:text-sm shadow-sm border border-pink-200 transition">📸 Our Scrapbook</a>
+                <a href="#love-notes" class="px-4 py-2.5 rounded-full bg-white/90 hover:bg-pink-50 text-sunset-plum font-semibold text-xs sm:text-sm shadow-sm border border-pink-200 transition">💌 Notes From My Heart</a>
+                <a href="#sunshine-ayahs" class="px-4 py-2.5 rounded-full bg-white/90 hover:bg-pink-50 text-sunset-plum font-semibold text-xs sm:text-sm shadow-sm border border-pink-200 transition">☀️ Pocket of Sunshine</a>
+                <a href="#birthday-cake" class="px-4 py-2.5 rounded-full bg-gradient-to-r from-rose-400 to-pink-500 text-white font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition">🎂 Make a Wish</a>
+            </nav>
+        </header>
+
+        <!-- INTERACTIVE ANIMATED CAT MEME UNIVERSE -->
+        <section id="cat-universe" class="frame-container mb-16 pt-4">
+            <div class="dream-card rounded-3xl p-6 sm:p-8 text-center relative overflow-hidden">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100/90 text-amber-800 text-xs font-bold uppercase tracking-wider mb-2">
+                    <span>✨ Live Animated Vinyl Sticker Pack ✨</span>
+                </div>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-sunset-plum">Ibrahim's Official Cat Meme Universe</h2>
+                <p class="text-sm sm:text-base text-sunset-plum/75 mt-1 mb-6">Tap any cat sticker for turbo dance moves, sound effects, kissy hearts & tulips for pattukutty!</p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 items-center justify-items-center max-w-full">
+                    <!-- 1. Bongo Cat -->
+                    <div class="flex flex-col items-center p-2">
+                        <div onclick="triggerCatMeme('bongo', this, event)" class="cat-sticker cat-bongo w-24 h-24 sm:w-28 sm:h-28" data-cat="bongo"></div>
+                        <span class="mt-2 font-meme text-xs sm:text-sm font-semibold text-sunset-plum bg-white/90 px-3 py-0.5 rounded-full border border-pink-100 shadow-xs">🥁 Bongo Dance</span>
+                    </div>
+
+                    <!-- 2. Pop Cat -->
+                    <div class="flex flex-col items-center p-2">
+                        <div onclick="triggerCatMeme('pop', this, event)" class="cat-sticker cat-pop w-24 h-24 sm:w-28 sm:h-28" data-cat="pop"></div>
+                        <span class="mt-2 font-meme text-xs sm:text-sm font-semibold text-sunset-plum bg-white/90 px-3 py-0.5 rounded-full border border-pink-100 shadow-xs">😮 Pop Cat</span>
+                    </div>
+
+                    <!-- 3. Crying Thumbs Up -> Happy Kissy Face -->
+                    <div class="flex flex-col items-center p-2">
+                        <div onclick="triggerCatMeme('kissy', this, event)" class="cat-sticker cat-kissy w-24 h-24 sm:w-28 sm:h-28" data-cat="kissy"></div>
+                        <span class="mt-2 font-meme text-xs sm:text-sm font-semibold text-sunset-plum bg-white/90 px-3 py-0.5 rounded-full border border-pink-100 shadow-xs">😘 Kissy Thumbs Up</span>
+                    </div>
+
+                    <!-- 4. Polite Cat -->
+                    <div class="flex flex-col items-center p-2">
+                        <div onclick="triggerCatMeme('polite', this, event)" class="cat-sticker cat-polite w-24 h-24 sm:w-28 sm:h-28" data-cat="polite"></div>
+                        <span class="mt-2 font-meme text-xs sm:text-sm font-semibold text-sunset-plum bg-white/90 px-3 py-0.5 rounded-full border border-pink-100 shadow-xs">🥺 Cutie Polite Cat</span>
+                    </div>
+
+                    <!-- 5. Maxwell the Cat -->
+                    <div class="flex flex-col items-center p-2">
+                        <div onclick="triggerCatMeme('maxwell', this, event)" class="cat-sticker cat-maxwell w-24 h-24 sm:w-28 sm:h-28" data-cat="maxwell"></div>
+                        <span class="mt-2 font-meme text-xs sm:text-sm font-semibold text-sunset-plum bg-white/90 px-3 py-0.5 rounded-full border border-pink-100 shadow-xs">🌀 Spinning Maxwell</span>
+                    </div>
+
+                    <!-- 6. Happy Happy Happy Cat -->
+                    <div class="flex flex-col items-center p-2">
+                        <div onclick="triggerCatMeme('happy', this, event)" class="cat-sticker cat-happy w-24 h-24 sm:w-28 sm:h-28" data-cat="happy"></div>
+                        <span class="mt-2 font-meme text-xs sm:text-sm font-semibold text-sunset-plum bg-white/90 px-3 py-0.5 rounded-full border border-pink-100 shadow-xs">🙌 Happy Dance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SCRAPBOOK SECTION: 5 POLAROID CHAPTERS -->
+        <section id="scrapbook" class="frame-container mb-20 pt-4">
+            <div class="text-center mb-12">
+                <span class="text-2xl">🌷📸🌷</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sunset-plum mt-2">Our Favorite Chapters Together</h2>
+                <p class="text-sunset-plum/75 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+                    Your saved moments—if you are previewing in the browser, tap the load button on any frame to select the matching WhatsApp photo or video!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start max-w-full">
+
+                <!-- Polaroid 1: Stage Award Video -->
+                <div class="polaroid relative -rotate-1">
+                    <div class="washi-tape"></div>
+                    <div onclick="triggerCatMeme('happy', this, event)" class="cat-sticker cat-happy absolute bottom-2 right-2 w-16 h-16 rotate-12 z-20" data-cat="happy"></div>
+
+                    <div class="polaroid-media-frame relative bg-pink-50 border border-pink-100 flex flex-col items-center justify-center text-center p-4">
+                        <video id="media-video-1" src="WhatsApp Video 2026-11-24 at 11.39.28 AM.mp4" class="hidden rounded-lg" controls playsinline onloadeddata="showLoadedMedia('media-video-1', 'placeholder-1')"></video>
+                        <div id="placeholder-1" class="flex flex-col items-center">
+                            <span class="text-4xl mb-2">🏆🎬</span>
+                            <p class="text-xs font-bold text-pink-600 uppercase tracking-wide">Chapter 01 • Stage Award Video</p>
+                            <p class="text-[11px] text-sunset-plum/70 mt-1 break-all font-mono bg-white/80 px-2 py-1 rounded">WhatsApp Video 2026-11-24 at 11.39.28 AM.mp4</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <h3 class="font-handwriting text-2xl font-bold text-sunset-plum">Watching You Shine On Stage ✨</h3>
+                        <p class="text-xs text-sunset-plum/75 mt-1">Proud of you winning that award for building the student activities website & helping everyone.</p>
+                        <label class="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-700 text-xs font-semibold cursor-pointer transition">
+                            <span>🎬 Select Video</span>
+                            <input type="file" accept="video/*" class="hidden" onchange="loadMedia(this, 'media-video-1', 'placeholder-1', true)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Polaroid 2: Auditorium Award Photo -->
+                <div class="polaroid relative rotate-1">
+                    <div class="washi-tape" style="background: rgba(216, 226, 220, 0.85);"></div>
+                    <div onclick="triggerCatMeme('polite', this, event)" class="cat-sticker cat-polite absolute top-2 right-2 w-16 h-16 -rotate-6 z-20" data-cat="polite"></div>
+
+                    <div class="polaroid-media-frame relative bg-amber-50/70 border border-amber-100 flex flex-col items-center justify-center text-center p-4">
+                        <img id="media-img-2" src="WhatsApp Image 2026-11-24 at 11.38.03 AM.jpeg" class="hidden rounded-lg" alt="Auditorium Moment" onload="showLoadedMedia('media-img-2', 'placeholder-2')">
+                        <div id="placeholder-2" class="flex flex-col items-center">
+                            <span class="text-4xl mb-2">📷🌸</span>
+                            <p class="text-xs font-bold text-amber-700 uppercase tracking-wide">Chapter 02 • Framed Memento</p>
+                            <p class="text-[11px] text-sunset-plum/70 mt-1 break-all font-mono bg-white/80 px-2 py-1 rounded">WhatsApp Image 2026-11-24 at 11.38.03 AM.jpeg</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <h3 class="font-handwriting text-2xl font-bold text-sunset-plum">Your Humble & Pure Heart 🥺</h3>
+                        <p class="text-xs text-sunset-plum/75 mt-1">Holding your award so humbly, thangakutty—you deserve every bit of appreciation.</p>
+                        <label class="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-800 text-xs font-semibold cursor-pointer transition">
+                            <span>📷 Photo</span>
+                            <input type="file" accept="image/*" class="hidden" onchange="loadMedia(this, 'media-img-2', 'placeholder-2', false)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Polaroid 3: Candid Selfie -->
+                <div class="polaroid relative -rotate-1">
+                    <div class="washi-tape" style="background: rgba(246, 189, 96, 0.65);"></div>
+                    <div onclick="triggerCatMeme('bongo', this, event)" class="cat-sticker cat-bongo absolute bottom-2 left-2 w-16 h-16 -rotate-12 z-20" data-cat="bongo"></div>
+
+                    <div class="polaroid-media-frame relative bg-purple-50/70 border border-purple-100 flex flex-col items-center justify-center text-center p-4">
+                        <img id="media-img-3" src="WhatsApp Image 2026-11-24 at 11.39.10 AM.jpeg" class="hidden rounded-lg" alt="Candid Selfie" onload="showLoadedMedia('media-img-3', 'placeholder-3')">
+                        <div id="placeholder-3" class="flex flex-col items-center">
+                            <span class="text-4xl mb-2">🌷💫</span>
+                            <p class="text-xs font-bold text-purple-700 uppercase tracking-wide">Chapter 03 • My Favorite Smile</p>
+                            <p class="text-[11px] text-sunset-plum/70 mt-1 break-all font-mono bg-white/80 px-2 py-1 rounded">WhatsApp Image 2026-11-24 at 11.39.10 AM.jpeg</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <h3 class="font-handwriting text-2xl font-bold text-sunset-plum">My Chellakutty Smile 💖</h3>
+                        <p class="text-xs text-sunset-plum/75 mt-1">Four years side by side, my pattukutty, and you are still my favorite view.</p>
+                        <label class="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-purple-100 hover:bg-purple-200 text-purple-800 text-xs font-semibold cursor-pointer transition">
+                            <span>📷 Photo</span>
+                            <input type="file" accept="image/*" class="hidden" onchange="loadMedia(this, 'media-img-3', 'placeholder-3', false)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Polaroid 4: Classroom/Hall Moment -->
+                <div class="polaroid relative rotate-1 lg:col-start-1">
+                    <div class="washi-tape"></div>
+                    <div onclick="triggerCatMeme('maxwell', this, event)" class="cat-sticker cat-maxwell absolute top-2 left-2 w-16 h-16 rotate-6 z-20" data-cat="maxwell"></div>
+
+                    <div class="polaroid-media-frame relative bg-rose-50/70 border border-rose-100 flex flex-col items-center justify-center text-center p-4">
+                        <img id="media-img-4" src="WhatsApp Image 2026-11-24 at 11.40.00 AM.jpeg" class="hidden rounded-lg" alt="Classmates Moment" onload="showLoadedMedia('media-img-4', 'placeholder-4')">
+                        <div id="placeholder-4" class="flex flex-col items-center">
+                            <span class="text-4xl mb-2">🎓🌷</span>
+                            <p class="text-xs font-bold text-rose-700 uppercase tracking-wide">Chapter 04 • Engineering Days</p>
+                            <p class="text-[11px] text-sunset-plum/70 mt-1 break-all font-mono bg-white/80 px-2 py-1 rounded">WhatsApp Image 2026-11-24 at 11.40.00 AM.jpeg</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <h3 class="font-handwriting text-2xl font-bold text-sunset-plum">Classmates to Best Friends ☀️</h3>
+                        <p class="text-xs text-sunset-plum/75 mt-1">Sitting next to you made every single lecture brighter.</p>
+                        <label class="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-rose-100 hover:bg-rose-200 text-rose-800 text-xs font-semibold cursor-pointer transition">
+                            <span>📷 Photo</span>
+                            <input type="file" accept="image/*" class="hidden" onchange="loadMedia(this, 'media-img-4', 'placeholder-4', false)">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Polaroid 5: Outdoor Walks & Throwback Clip -->
+                <div class="polaroid relative -rotate-1 md:col-span-2 lg:col-span-2">
+                    <div class="washi-tape" style="width: 140px; background: rgba(255, 202, 212, 0.85);"></div>
+                    <div onclick="triggerCatMeme('pop', this, event)" class="cat-sticker cat-pop absolute bottom-2 right-2 w-16 h-16 rotate-12 z-20" data-cat="pop"></div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Slot 5A: Outdoor Walk Photo -->
+                        <div class="polaroid-media-frame relative bg-pink-50/70 border border-pink-100 flex flex-col items-center justify-center text-center p-3">
+                            <img id="media-img-5a" src="WhatsApp Image 2026-11-24 at 11.40.15 AM.jpeg" class="hidden rounded-lg" alt="Outdoor Walk" onload="showLoadedMedia('media-img-5a', 'placeholder-5a')">
+                            <div id="placeholder-5a" class="flex flex-col items-center">
+                                <span class="text-3xl mb-1.5">🌷💖</span>
+                                <p class="text-[11px] font-bold text-pink-600 uppercase">Chapter 05A • Outdoor Walk</p>
+                                <p class="text-[10px] text-sunset-plum/70 mt-1 break-all font-mono bg-white/80 px-2 py-0.5 rounded">WhatsApp Image 2026-11-24 at 11.40.15 AM.jpeg</p>
+                            </div>
+                        </div>
+
+                        <!-- Slot 5B: Second Outdoor Walk Photo -->
+                        <div class="polaroid-media-frame relative bg-amber-50/70 border border-amber-100 flex flex-col items-center justify-center text-center p-3">
+                            <img id="media-img-5b" src="WhatsApp Image 2026-11-24 at 11.40.14 AM.jpeg" class="hidden rounded-lg" alt="Sunny Walk Together" onload="showLoadedMedia('media-img-5b', 'placeholder-5b')">
+                            <div id="placeholder-5b" class="flex flex-col items-center">
+                                <span class="text-3xl mb-1.5">☀️🌷</span>
+                                <p class="text-[11px] font-bold text-amber-700 uppercase">Chapter 05B • Sunny Stroll</p>
+                                <p class="text-[10px] text-sunset-plum/70 mt-1 break-all font-mono bg-white/80 px-2 py-0.5 rounded">WhatsApp Image 2026-11-24 at 11.40.14 AM.jpeg</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Throwback Video Strip -->
+                    <div class="mt-4 polaroid-media-frame relative bg-indigo-50/70 border border-indigo-100 flex flex-col items-center justify-center text-center p-3">
+                        <video id="media-video-5" src="VID-20240725-WA0088.mp4" class="hidden rounded-lg" controls playsinline onloadeddata="showLoadedMedia('media-video-5', 'placeholder-5c')"></video>
+                        <div id="placeholder-5c" class="flex flex-col items-center">
+                            <span class="text-3xl mb-1.5">🎥✨</span>
+                            <p class="text-[11px] font-bold text-indigo-600 uppercase">Chapter 05C • Cute Wave Video</p>
+                            <p class="text-[10px] text-sunset-plum/70 mt-1 break-all font-mono bg-white/80 px-2 py-0.5 rounded">VID-20240725-WA0088.mp4</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <h3 class="font-handwriting text-2xl font-bold text-sunset-plum">From Serious Face to That Cute Wave 🌷</h3>
+                        <p class="text-xs text-sunset-plum/75 mt-1">Every random walk and candid clip with my thangakutty is my favorite memory.</p>
+                        <div class="mt-3 flex flex-wrap justify-center gap-2">
+                            <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-pink-100 hover:bg-pink-200 text-pink-700 text-xs font-semibold cursor-pointer transition">
+                                <span>📷 Photo (11.40.15 AM)</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="loadMedia(this, 'media-img-5a', 'placeholder-5a', false)">
+                            </label>
+                            <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-800 text-xs font-semibold cursor-pointer transition">
+                                <span>📷 Photo (11.40.14 AM)</span>
+                                <input type="file" accept="image/*" class="hidden" onchange="loadMedia(this, 'media-img-5b', 'placeholder-5b', false)">
+                            </label>
+                            <label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-indigo-100 hover:bg-indigo-200 text-indigo-700 text-xs font-semibold cursor-pointer transition">
+                                <span>🎬 Video (WA0088)</span>
+                                <input type="file" accept="video/*" class="hidden" onchange="loadMedia(this, 'media-video-5', 'placeholder-5c', true)">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NOTES FROM MY HEART: 6 PERSONALIZED LOVE NOTES + COMPOSER -->
+        <section id="love-notes" class="frame-container mb-20 pt-4">
+            <div class="text-center mb-12">
+                <span class="text-2xl">💌🌷💌</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sunset-plum mt-2">Notes From My Heart (Just From Me)</h2>
+                <p class="text-sunset-plum/75 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+                    Everything I admire, love, and want you to remember about who you are, chellakutty Ibrahim.
+                </p>
+            </div>
+
+            <div id="love-notes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 max-w-full">
+
+                <!-- Note 1: My Diamond (His Character) -->
+                <div class="dream-card rounded-3xl p-6 sm:p-7 relative hover:-translate-y-1 transition duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-bold">01 • My Diamond</span>
+                        <span class="text-xl">💎🌷</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sunset-plum mb-2.5">My Diamond</h3>
+                    <p class="text-sm text-sunset-plum/85 leading-relaxed">
+                        You are my diamond, pattukutty—so rare, precious, and genuine in how deeply your heart wants to be seen, heard, and cherished for who you truly are inside. After everything you've carried in the past, it makes sense why you crave warmth and reassurance. When life gets loud, please remember your family wants the best for you—and to me, you will always be my diamond and my priority.
+                    </p>
+                </div>
+
+                <!-- Note 2: The Quiet Things You Do -->
+                <div class="dream-card rounded-3xl p-6 sm:p-7 relative hover:-translate-y-1 transition duration-300">
+                    <div onclick="triggerCatMeme('kissy', this, event)" class="cat-sticker cat-kissy absolute top-3 right-3 w-16 h-16 rotate-12 z-20" data-cat="kissy"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold">02 • How You Love</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sunset-plum mb-2.5">The Quiet Things You Do</h3>
+                    <p class="text-sm text-sunset-plum/85 leading-relaxed">
+                        You love with pure instinct—from automatically making sure I walk safely on the left side of the road away from traffic, to dropping everything to fix even my tiniest problem. And when you cried over a video of people going hungry just because you wished you could already feed them all, it showed how soft and genuine your heart really is, thangakutty.
+                    </p>
+                </div>
+
+                <!-- Note 3: My Safe Place & Best Friend -->
+                <div class="dream-card rounded-3xl p-6 sm:p-7 relative hover:-translate-y-1 transition duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-bold">03 • 4 Years Together</span>
+                        <span class="text-xl">🎓</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sunset-plum mb-2.5">My Safe Place & Best Friend</h3>
+                    <p class="text-sm text-sunset-plum/85 leading-relaxed">
+                        Over these four years of engineering, watching us grow from classmates to friends, best friends, and then lovers has been my favorite journey. Whenever life gets tough, calling each other to rant and cheer each other up reminds me that you are my safe place—and I will always be yours, chellakutty.
+                    </p>
+                </div>
+
+                <!-- Note 4: Chellakutty Face -->
+                <div class="dream-card rounded-3xl p-6 sm:p-7 relative hover:-translate-y-1 transition duration-300">
+                    <div onclick="triggerCatMeme('happy', this, event)" class="cat-sticker cat-happy absolute bottom-3 right-3 w-16 h-16 -rotate-6 z-20" data-cat="happy"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-rose-100 text-rose-700 text-xs font-bold">04 • Pure Joy</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sunset-plum mb-2.5">My Favorite "Chellakutty" Face</h3>
+                    <p class="text-sm text-sunset-plum/85 leading-relaxed">
+                        Whenever I call you "chellakutty", "pattukutty", or "thangakutty", or say something sweet about you, your eyes light up with pure, childlike happiness and love. Seeing that sweet, playful boy's face instantly makes my whole world brighter every single time.
+                    </p>
+                </div>
+
+                <!-- Note 5: Most Handsome Sweet Boy & Best Husband Material -->
+                <div class="dream-card rounded-3xl p-6 sm:p-7 relative hover:-translate-y-1 transition duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">05 • The Truth Today</span>
+                        <span class="text-xl">💍</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sunset-plum mb-2.5">Most Handsome & Best Husband Material</h3>
+                    <p class="text-sm text-sunset-plum/85 leading-relaxed">
+                        You don't need to prove anything to anyone, pattukutty, and you should never doubt how you look. In my eyes, you are everything I need—the most handsome sweet boy and the absolute best husband material in this world. You can't fill others' hearts if you're hollow inside, so admire yourself first.
+                    </p>
+                </div>
+
+                <!-- Note 6: Choosing Himself First -->
+                <div class="dream-card rounded-3xl p-6 sm:p-7 relative hover:-translate-y-1 transition duration-300">
+                    <div onclick="triggerCatMeme('polite', this, event)" class="cat-sticker cat-polite absolute top-3 right-3 w-16 h-16 rotate-6 z-20" data-cat="polite"></div>
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-bold">06 • Forever Reminder</span>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sunset-plum mb-2.5">Please Choose Yourself First</h3>
+                    <p class="text-sm text-sunset-plum/85 leading-relaxed">
+                        My forever reminder to you, thangakutty—not just on your 22nd birthday, but every single day: put your own happiness and needs first, make decisions for your own peace, and love and respect yourself unconditionally. When you are truly happy, everything else falls into place.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Add Another Note From Me Composer -->
+            <div class="mt-8 dream-card rounded-3xl p-6 max-w-2xl mx-auto">
+                <h4 class="font-serif text-lg font-bold text-sunset-plum mb-3 text-center">✍️ Write Another Note From Me</h4>
+                <div class="space-y-3">
+                    <input id="new-note-title" type="text" placeholder="Note title (e.g., For My Pattukutty...)" class="w-full px-4 py-2.5 rounded-2xl bg-white/90 border border-pink-200 text-sm text-sunset-plum focus:outline-none focus:ring-2 focus:ring-pink-300">
+                    <textarea id="new-note-body" rows="3" placeholder="Write something sweet for chellakutty or thangakutty..." class="w-full px-4 py-2.5 rounded-2xl bg-white/90 border border-pink-200 text-sm text-sunset-plum focus:outline-none focus:ring-2 focus:ring-pink-300"></textarea>
+                    <div class="text-center">
+                        <button type="button" onclick="addCustomLoveNote()" class="px-6 py-2.5 rounded-full bg-gradient-to-r from-rose-400 to-pink-500 text-white font-semibold text-xs sm:text-sm shadow hover:shadow-md transition">
+                            + Add Note to My Heart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- A POCKET FULL OF SUNSHINE: 10 QURANIC FLIP CARDS -->
+        <section id="sunshine-ayahs" class="frame-container mb-20 pt-4">
+            <div class="text-center mb-12">
+                <span class="text-2xl">☀️🤲🌷</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sunset-plum mt-2">A Pocket Full of Sunshine</h2>
+                <p class="text-sunset-plum/75 text-sm sm:text-base mt-2 max-w-xl mx-auto">
+                    10 Quranic verses handpicked for every moment your heart feels heavy, tired, or stressed. Tap any card to flip it open for the Arabic verse, translation & reminder.
+                </p>
+            </div>
+
+            <div id="ayah-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-full">
+                <!-- Populated dynamically with verified Arabic script, Surah & Ayah, translation & personal note -->
+            </div>
+        </section>
+
+        <!-- INTERACTIVE 22ND BIRTHDAY CAKE & CLOSING LETTER -->
+        <section id="birthday-cake" class="frame-container mb-20 pt-4">
+            <div class="max-w-3xl mx-auto dream-card rounded-[2rem] p-6 sm:p-10 text-center relative overflow-hidden">
+                <span class="inline-block px-4 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-bold uppercase tracking-wider mb-3">
+                    🎂 Make Your 22nd Birthday Wish 🎂
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sunset-plum">Blow Out Your Candles, Ibrahim!</h2>
+                <p id="cake-instruction" class="text-sm sm:text-base text-sunset-plum/80 mt-2 mb-6">
+                    Close your eyes, make a wish for your own happiness in your 22nd year, and tap the cake (or button) to blow out the "22" candles! 🌷✨
+                </p>
+
+                <!-- Interactive SVG Birthday Cake with "22" Candles & Smoke Wisps -->
+                <div onclick="blowOutCandles()" class="cursor-pointer inline-block select-none group transition-transform hover:scale-105 max-w-full" title="Tap to blow out candles!">
+                    <svg viewBox="0 0 320 260" class="w-60 sm:w-76 h-auto mx-auto drop-shadow-xl">
+                        <!-- Soft Glow Behind Candles -->
+                        <circle id="candle-glow" cx="160" cy="65" r="55" fill="rgba(253, 224, 71, 0.28)" class="transition-opacity duration-500"/>
+
+                        <!-- Candle "2" Left -->
+                        <g transform="translate(122, 52)">
+                            <rect x="6" y="18" width="12" height="36" rx="4" fill="#F472B6" stroke="#FFF" stroke-width="2"/>
+                            <path d="M6 26 L18 32 M6 36 L18 42" stroke="#FBCFE8" stroke-width="2.5"/>
+                            <line x1="12" y1="12" x2="12" y2="18" stroke="#4A354F" stroke-width="2" stroke-linecap="round"/>
+                            <!-- Smoke Wisp 1 -->
+                            <path id="smoke-1" d="M12 10 Q8 2 13 -6 Q17 -14 11 -22" fill="none" stroke="#9CA3AF" stroke-width="2.5" stroke-linecap="round" class="smoke-wisp"/>
+                            <!-- Flame 1 -->
+                            <g id="flame-1" class="candle-flame">
+                                <path d="M12 0 C18 7, 17 14, 12 15 C7 14, 6 7, 12 0 Z" fill="#F59E0B"/>
+                                <path d="M12 4 C15 8, 14 13, 12 14 C10 13, 9 8, 12 4 Z" fill="#FEF08A"/>
+                            </g>
+                        </g>
+
+                        <!-- Candle "2" Right -->
+                        <g transform="translate(174, 52)">
+                            <rect x="6" y="18" width="12" height="36" rx="4" fill="#A78BFA" stroke="#FFF" stroke-width="2"/>
+                            <path d="M6 26 L18 32 M6 36 L18 42" stroke="#DDD6FE" stroke-width="2.5"/>
+                            <line x1="12" y1="12" x2="12" y2="18" stroke="#4A354F" stroke-width="2" stroke-linecap="round"/>
+                            <!-- Smoke Wisp 2 -->
+                            <path id="smoke-2" d="M12 10 Q16 2 11 -6 Q7 -14 13 -22" fill="none" stroke="#9CA3AF" stroke-width="2.5" stroke-linecap="round" class="smoke-wisp"/>
+                            <!-- Flame 2 -->
+                            <g id="flame-2" class="candle-flame">
+                                <path d="M12 0 C18 7, 17 14, 12 15 C7 14, 6 7, 12 0 Z" fill="#F59E0B"/>
+                                <path d="M12 4 C15 8, 14 13, 12 14 C10 13, 9 8, 12 4 Z" fill="#FEF08A"/>
+                            </g>
+                        </g>
+
+                        <!-- Cake Plate -->
+                        <ellipse cx="160" cy="228" rx="135" ry="18" fill="#FCE7F3" stroke="#F9A8D4" stroke-width="2"/>
+
+                        <!-- Bottom Tier -->
+                        <rect x="55" y="155" width="210" height="68" rx="18" fill="#FBCFE8" stroke="#F472B6" stroke-width="2"/>
+                        <path d="M55 170 Q72 188 88 170 Q105 190 122 170 Q140 186 160 170 Q180 188 198 170 Q215 190 232 170 Q248 186 265 170 L265 162 Q265 155 250 155 L70 155 Q55 155 55 162 Z" fill="#FFF9F5"/>
+
+                        <!-- Top Tier -->
+                        <rect x="85" y="102" width="150" height="56" rx="16" fill="#F9A8D4" stroke="#EC4899" stroke-width="2"/>
+                        <path d="M85 116 Q102 132 118 116 Q135 134 152 116 Q168 132 185 116 Q202 134 218 116 Q228 126 235 116 L235 110 Q235 102 222 102 L98 102 Q85 102 85 110 Z" fill="#FFFFFF"/>
+
+                        <!-- "22" Badge on Cake -->
+                        <circle cx="160" cy="188" r="22" fill="#FFF9F5" stroke="#F472B6" stroke-width="2.5"/>
+                        <text x="160" y="195" text-anchor="middle" font-family="Playfair Display, serif" font-weight="bold" font-size="20" fill="#DB2777">22</text>
+
+                        <!-- Sprinkles -->
+                        <circle cx="110" cy="140" r="3.5" fill="#F59E0B"/>
+                        <circle cx="210" cy="140" r="3.5" fill="#34D399"/>
+                        <circle cx="160" cy="138" r="3.5" fill="#60A5FA"/>
+                        <circle cx="95" cy="195" r="4" fill="#F43F5E"/>
+                        <circle cx="225" cy="195" r="4" fill="#F43F5E"/>
+                    </svg>
+                </div>
+
+                <div class="mt-6 flex flex-wrap justify-center gap-3">
+                    <button id="blow-btn" type="button" onclick="blowOutCandles()" class="px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-xl active:scale-95 transition">
+                        🌬️ Blow Out Candles
+                    </button>
+                    <button id="relight-btn" type="button" onclick="relightCandles()" class="hidden px-6 py-3 rounded-full bg-white text-sunset-plum border border-pink-200 font-bold text-sm sm:text-base shadow hover:bg-pink-50 transition">
+                        🕯️ Relight Candles
+                    </button>
+                </div>
+
+                <!-- Closing Love Letter -->
+                <div id="closing-letter" class="mt-8 pt-8 border-t border-pink-200/80 text-left bg-white/75 rounded-3xl p-6 sm:p-8 transition-all duration-500">
+                    <p class="font-handwriting text-2xl sm:text-3xl font-bold text-rose-500 mb-3">To My Sweetest Chellakutty, Ibrahim 🌷</p>
+                    <p class="text-sm sm:text-base text-sunset-plum/90 leading-relaxed space-y-3">
+                        Happy 22nd birthday to the boy who makes my heart feel safe, warm, and deeply loved. Just like those tulips you once got me, you bring color and softness into my life every single day. Never forget how rare your soul is, how handsome you are in my eyes, and how much you deserve to be happy—not only today, but every day of your life.
+                    </p>
+                    <p class="mt-4 font-handwriting text-2xl font-bold text-sunset-plum">Always yours, celebrating you every day 💖🌷</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="pb-14 pt-6 frame-container text-center">
+        <div class="inline-flex items-center justify-center gap-2 text-2xl mb-3">
+            <span>🌷</span><span>💖</span><span>🌷</span>
+        </div>
+        <p class="font-serif text-lg sm:text-xl font-bold tracking-widest text-sunset-plum uppercase break-words">
+            MADE WITH ALL THE LOVE TO THE MOON AND BACK
+        </p>
+        <p class="text-xs sm:text-sm text-sunset-plum/70 mt-2">
+            Happy 22nd Birthday, Ibrahim • Born 2004 • Forever & Always 🌷
+        </p>
+    </footer>
+
+    <script>
+        /* =========================================================================
+           1. WEB AUDIO SYNTHESIZED SOUND EFFECTS (Zero external audio files needed)
+           ========================================================================= */
+        let audioCtx = null;
+        function playCatSound(type) {
+            try {
+                if (!audioCtx) {
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                const now = audioCtx.currentTime;
+                if (type === 'bongo') {
+                    // Two rhythmic bongo drum hits
+                    [0, 0.14].forEach((offset, i) => {
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'triangle';
+                        osc.frequency.setValueAtTime(i === 0 ? 220 : 290, now + offset);
+                        osc.frequency.exponentialRampToValueAtTime(110, now + offset + 0.11);
+                        gain.gain.setValueAtTime(0.28, now + offset);
+                        gain.gain.exponentialRampToValueAtTime(0.01, now + offset + 0.12);
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        osc.start(now + offset);
+                        osc.stop(now + offset + 0.13);
+                    });
+                } else if (type === 'pop') {
+                    // Classic Pop Cat mouth pop
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(240, now);
+                    osc.frequency.exponentialRampToValueAtTime(680, now + 0.08);
+                    gain.gain.setValueAtTime(0.3, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.09);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.1);
+                } else if (type === 'kissy') {
+                    // Sweet kissy pop + warm chime
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(520, now);
+                    osc.frequency.exponentialRampToValueAtTime(980, now + 0.12);
+                    gain.gain.setValueAtTime(0.22, now);
+                    gain.gain.exponentialRampToValueAtTime(0.01, now + 0.18);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.2);
+                } else {
+                    // Happy cheerful chime triad for Happy, Maxwell & Polite cat
+                    [523.25, 659.25, 783.99].forEach((freq, i) => {
+                        const osc = audioCtx.createOscillator();
+                        const gain = audioCtx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(freq, now + i * 0.07);
+                        gain.gain.setValueAtTime(0.16, now + i * 0.07);
+                        gain.gain.exponentialRampToValueAtTime(0.005, now + i * 0.07 + 0.24);
+                        osc.connect(gain);
+                        gain.connect(audioCtx.destination);
+                        osc.start(now + i * 0.07);
+                        osc.stop(now + i * 0.07 + 0.25);
+                    });
+                }
+            } catch (e) {
+                // Gracefully ignore if browser blocks audio before gesture
+            }
+        }
+
+        /* =========================================================================
+           2. CUSTOM DIE-CUT VINYL SVG CAT MEME STICKERS (WITH ANIMATED PARTS)
+           ========================================================================= */
+        const CAT_MEME_SVGS = {
+            // 1. Bongo Cat: Tapping paws + dancing body + floating music notes
+            bongo: `
+                <svg viewBox="0 0 140 140" class="w-full h-full overflow-visible">
+                    <defs>
+                        <filter id="sticker-border-bongo" x="-20%" y="-20%" width="140%" height="140%">
+                            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="5"/>
+                            <feFlood flood-color="#FFFFFF" flood-opacity="1" result="WHITE"/>
+                            <feComposite in="WHITE" in2="DILATED" operator="in" result="OUTLINE"/>
+                            <feMerge><feMergeNode in="OUTLINE"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#sticker-border-bongo)">
+                        <!-- Floating Musical Notes -->
+                        <g class="music-notes">
+                            <text x="16" y="34" font-size="20" fill="#EC4899" font-weight="bold">♪</text>
+                            <text x="110" y="32" font-size="20" fill="#8B5CF6" font-weight="bold">♫</text>
+                        </g>
+                        <!-- Dancing White Cat Body & Head -->
+                        <g class="bongo-body">
+                            <path d="M36 68 L32 34 L54 48 Q70 43 86 48 L108 34 L104 68 Q112 85 106 98 L34 98 Q28 85 36 68 Z" fill="#FFFFFF" stroke="#2D232E" stroke-width="3.5" stroke-linejoin="round"/>
+                            <polygon points="37,43 49,50 38,57" fill="#FDA4AF"/>
+                            <polygon points="103,43 91,50 102,57" fill="#FDA4AF"/>
+                            <circle cx="55" cy="68" r="4.5" fill="#2D232E"/>
+                            <circle cx="85" cy="68" r="4.5" fill="#2D232E"/>
+                            <path d="M64 73 Q67 78 70 73 Q73 78 76 73" fill="none" stroke="#2D232E" stroke-width="3" stroke-linecap="round"/>
+                            <ellipse cx="46" cy="75" rx="5" ry="3" fill="#FDA4AF" opacity="0.75"/>
+                            <ellipse cx="94" cy="75" rx="5" ry="3" fill="#FDA4AF" opacity="0.75"/>
+                        </g>
+                        <!-- Wooden Bongo Table -->
+                        <polygon points="14,94 126,86 132,114 8,122" fill="#D97706" stroke="#2D232E" stroke-width="3.5" stroke-linejoin="round"/>
+                        <polygon points="8,122 132,114 132,123 8,131" fill="#92400E" stroke="#2D232E" stroke-width="3" stroke-linejoin="round"/>
+                        <!-- Alternating Tapping Paws -->
+                        <g class="paw-left">
+                            <ellipse cx="44" cy="89" rx="11" ry="8" fill="#FFFFFF" stroke="#2D232E" stroke-width="3.5"/>
+                            <path d="M23 78 L30 82 M20 86 L28 87" stroke="#EC4899" stroke-width="2.5" stroke-linecap="round"/>
+                        </g>
+                        <g class="paw-right">
+                            <ellipse cx="96" cy="84" rx="11" ry="8" fill="#FFFFFF" stroke="#2D232E" stroke-width="3.5"/>
+                            <path d="M110 73 L117 69 M112 81 L120 79" stroke="#EC4899" stroke-width="2.5" stroke-linecap="round"/>
+                        </g>
+                    </g>
+                </svg>`,
+
+            // 2. Pop Cat: Mouth pops open into wide 'O' + POP! comic burst
+            pop: `
+                <svg viewBox="0 0 140 140" class="w-full h-full overflow-visible">
+                    <defs>
+                        <filter id="sticker-border-pop" x="-20%" y="-20%" width="140%" height="140%">
+                            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="5"/>
+                            <feFlood flood-color="#FFFFFF" flood-opacity="1" result="WHITE"/>
+                            <feComposite in="WHITE" in2="DILATED" operator="in" result="OUTLINE"/>
+                            <feMerge><feMergeNode in="OUTLINE"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#sticker-border-pop)">
+                        <g class="pop-head">
+                            <path d="M32 76 L28 32 L54 46 Q70 41 86 46 L112 32 L108 76 Q114 114 70 118 Q26 114 32 76 Z" fill="#FDBA74" stroke="#431407" stroke-width="3.5" stroke-linejoin="round"/>
+                            <path d="M62 45 L64 56 M70 43 L70 58 M78 45 L76 56" stroke="#C2410C" stroke-width="3" stroke-linecap="round"/>
+                            <polygon points="34,42 48,49 36,59" fill="#FDA4AF"/>
+                            <polygon points="106,42 92,49 104,59" fill="#FDA4AF"/>
+                            <circle cx="52" cy="68" r="7.5" fill="#1C1917"/>
+                            <circle cx="50" cy="65" r="2.5" fill="#FFFFFF"/>
+                            <circle cx="88" cy="68" r="7.5" fill="#1C1917"/>
+                            <circle cx="86" cy="65" r="2.5" fill="#FFFFFF"/>
+                            <polygon points="66,76 74,76 70,81" fill="#F43F5E"/>
+                            <!-- Closed cute mouth base -->
+                            <path d="M63 85 Q66.5 89 70 85 Q73.5 89 77 85" fill="none" stroke="#431407" stroke-width="2.8" stroke-linecap="round"/>
+                            <!-- Animated Wide Open 'O' Mouth -->
+                            <g class="pop-mouth">
+                                <ellipse cx="70" cy="97" rx="16" ry="18" fill="#9F1239" stroke="#431407" stroke-width="3.5"/>
+                                <ellipse cx="70" cy="104" rx="10" ry="7" fill="#FB7185"/>
+                            </g>
+                        </g>
+                        <!-- POP! Comic Burst Badge -->
+                        <g class="pop-badge" transform="translate(86, 10)">
+                            <polygon points="22,0 28,10 42,8 34,19 44,28 31,30 32,42 21,34 11,42 12,30 0,27 10,18 3,8 16,10" fill="#FDE047" stroke="#431407" stroke-width="2.5"/>
+                            <text x="22" y="25" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="700" font-size="11" fill="#DC2626">POP!</text>
+                        </g>
+                    </g>
+                </svg>`,
+
+            // 3. Crying Thumbs Up -> Happy Kissy Face sending hearts & kisses
+            kissy: `
+                <svg viewBox="0 0 140 140" class="w-full h-full overflow-visible">
+                    <defs>
+                        <filter id="sticker-border-kissy" x="-20%" y="-20%" width="140%" height="140%">
+                            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="5"/>
+                            <feFlood flood-color="#FFFFFF" flood-opacity="1" result="WHITE"/>
+                            <feComposite in="WHITE" in2="DILATED" operator="in" result="OUTLINE"/>
+                            <feMerge><feMergeNode in="OUTLINE"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#sticker-border-kissy)">
+                        <g class="kissy-head">
+                            <!-- Soft Tabby Head -->
+                            <path d="M26 76 L24 34 L48 48 Q64 43 80 48 L104 34 L102 76 Q106 112 64 115 Q22 112 26 76 Z" fill="#FDE68A" stroke="#4A354F" stroke-width="3.5" stroke-linejoin="round"/>
+                            <ellipse cx="64" cy="92" rx="22" ry="17" fill="#FFFBEB"/>
+                            <polygon points="29,43 44,49 32,59" fill="#FDA4AF"/>
+                            <polygon points="99,43 84,49 96,59" fill="#FDA4AF"/>
+                            <!-- Happy Closed Wink & Lovey Eye -->
+                            <path d="M39 69 Q47 61 55 69" fill="none" stroke="#4A354F" stroke-width="3.5" stroke-linecap="round"/>
+                            <path d="M73 69 Q81 61 89 69" fill="none" stroke="#4A354F" stroke-width="3.5" stroke-linecap="round"/>
+                            <!-- Rosy Glowing Blush -->
+                            <ellipse cx="38" cy="79" rx="7" ry="4.5" fill="#FB7185" opacity="0.75"/>
+                            <ellipse cx="90" cy="79" rx="7" ry="4.5" fill="#FB7185" opacity="0.75"/>
+                            <!-- Cute '3' Kissy Lips -->
+                            <path d="M58 86 Q66 86 66 91 Q66 95 59 95 Q66 95 66 100 Q66 104 58 104" fill="none" stroke="#E11D48" stroke-width="3.5" stroke-linecap="round"/>
+                        </g>
+                        <!-- Floating Kissy Hearts -->
+                        <text x="72" y="84" font-size="18" class="kiss-heart-1">💖</text>
+                        <text x="86" y="64" font-size="15" class="kiss-heart-2">😘</text>
+                        <!-- Happy Thumbs Up Hand -->
+                        <g class="kissy-thumb" transform="translate(84, 66)">
+                            <path d="M14 24 L14 8 Q14 1 20 1 Q26 1 26 8 L26 22 L40 22 Q46 22 46 28 Q46 33 42 34 Q45 36 44 41 Q43 45 39 46 Q41 49 38 53 Q35 56 28 56 L12 56 Q6 56 6 48 L6 30 Q6 24 14 24 Z" fill="#FACC15" stroke="#4A354F" stroke-width="3.5" stroke-linejoin="round"/>
+                        </g>
+                    </g>
+                </svg>`,
+
+            // 4. Polite Cat: Cute head tilt, rosy cheeks & twinkling sparkles
+            polite: `
+                <svg viewBox="0 0 140 140" class="w-full h-full overflow-visible">
+                    <defs>
+                        <filter id="sticker-border-polite" x="-20%" y="-20%" width="140%" height="140%">
+                            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="5"/>
+                            <feFlood flood-color="#FFFFFF" flood-opacity="1" result="WHITE"/>
+                            <feComposite in="WHITE" in2="DILATED" operator="in" result="OUTLINE"/>
+                            <feMerge><feMergeNode in="OUTLINE"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#sticker-border-polite)">
+                        <g class="polite-head">
+                            <path d="M26 74 L24 32 L52 46 Q70 42 88 46 L116 32 L114 74 Q118 114 70 116 Q22 114 26 74 Z" fill="#FDE68A" stroke="#3F2E21" stroke-width="3.5" stroke-linejoin="round"/>
+                            <path d="M28 78 Q70 68 112 78 Q112 113 70 115 Q28 113 28 78 Z" fill="#FFFBEB"/>
+                            <polygon points="30,41 46,48 33,58" fill="#FDA4AF"/>
+                            <polygon points="110,41 94,48 107,58" fill="#FDA4AF"/>
+                            <!-- Big Sparkly Polite Eyes -->
+                            <circle cx="48" cy="68" r="7" fill="#1C1917"/>
+                            <circle cx="45.5" cy="65" r="2.8" fill="#FFFFFF"/>
+                            <circle cx="50" cy="70" r="1.4" fill="#FFFFFF"/>
+                            <circle cx="92" cy="68" r="7" fill="#1C1917"/>
+                            <circle cx="89.5" cy="65" r="2.8" fill="#FFFFFF"/>
+                            <circle cx="94" cy="70" r="1.4" fill="#FFFFFF"/>
+                            <!-- Tiny Nose & Wide Polite Smile -->
+                            <polygon points="66,76 74,76 70,80" fill="#FB7185"/>
+                            <path d="M46 91 Q70 98 94 91" fill="none" stroke="#3F2E21" stroke-width="3.5" stroke-linecap="round"/>
+                            <path d="M44 88 L47 93 M96 88 L93 93" stroke="#3F2E21" stroke-width="3" stroke-linecap="round"/>
+                            <!-- Extra Cute Blush -->
+                            <ellipse cx="38" cy="83" rx="7" ry="4" fill="#FDA4AF" opacity="0.8"/>
+                            <ellipse cx="102" cy="83" rx="7" ry="4" fill="#FDA4AF" opacity="0.8"/>
+                        </g>
+                        <!-- Twinkling Cutie Sparkles -->
+                        <path class="polite-sparkle" d="M18 22 L21 29 L28 32 L21 35 L18 42 L15 35 L8 32 L15 29 Z" fill="#FACC15" stroke="#3F2E21" stroke-width="1.5"/>
+                        <text x="108" y="34" font-size="18" class="polite-sparkle">🌸</text>
+                    </g>
+                </svg>`,
+
+            // 5. Maxwell Loaf: 360-degree spinning tuxedo loaf cat with musical notes
+            maxwell: `
+                <svg viewBox="0 0 140 140" class="w-full h-full overflow-visible">
+                    <defs>
+                        <filter id="sticker-border-maxwell" x="-20%" y="-20%" width="140%" height="140%">
+                            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="5"/>
+                            <feFlood flood-color="#FFFFFF" flood-opacity="1" result="WHITE"/>
+                            <feComposite in="WHITE" in2="DILATED" operator="in" result="OUTLINE"/>
+                            <feMerge><feMergeNode in="OUTLINE"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#sticker-border-maxwell)">
+                        <g class="maxwell-spinner">
+                            <!-- Tuxedo Loaf Body -->
+                            <rect x="20" y="64" width="100" height="52" rx="26" fill="#1F2937" stroke="#111827" stroke-width="3.5"/>
+                            <path d="M44 88 Q62 84 80 88 L76 114 L48 114 Z" fill="#FFFFFF"/>
+                            <!-- Black Cat Head -->
+                            <path d="M34 68 L32 34 L52 46 Q62 43 72 46 L92 34 L90 68 Q94 92 62 94 Q30 92 34 68 Z" fill="#1F2937" stroke="#111827" stroke-width="3.5" stroke-linejoin="round"/>
+                            <polygon points="62,68 44,89 80,89" fill="#FFFFFF"/>
+                            <circle cx="48" cy="64" r="5.5" fill="#FDE047"/>
+                            <circle cx="48" cy="64" r="2.8" fill="#111827"/>
+                            <circle cx="76" cy="64" r="5.5" fill="#FDE047"/>
+                            <circle cx="76" cy="64" r="2.8" fill="#111827"/>
+                            <polygon points="59,73 65,73 62,77" fill="#F472B6"/>
+                            <path d="M57 80 Q62 84 67 80" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M24 72 L40 74 M24 80 L40 79 M84 74 L100 72 M84 79 L100 80" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round"/>
+                        </g>
+                        <text x="102" y="38" font-size="22" fill="#EC4899" font-weight="bold">♪</text>
+                        <text x="115" y="54" font-size="18" fill="#8B5CF6" font-weight="bold">♫</text>
+                    </g>
+                </svg>`,
+
+            // 6. Happy Happy Happy Cat: Jumping double-paw raised dance
+            happy: `
+                <svg viewBox="0 0 140 140" class="w-full h-full overflow-visible">
+                    <defs>
+                        <filter id="sticker-border-happy" x="-20%" y="-20%" width="140%" height="140%">
+                            <feMorphology in="SourceAlpha" result="DILATED" operator="dilate" radius="5"/>
+                            <feFlood flood-color="#FFFFFF" flood-opacity="1" result="WHITE"/>
+                            <feComposite in="WHITE" in2="DILATED" operator="in" result="OUTLINE"/>
+                            <feMerge><feMergeNode in="OUTLINE"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <g filter="url(#sticker-border-happy)">
+                        <g class="happy-dancer">
+                            <!-- Raised Waving Paws -->
+                            <g class="happy-paws">
+                                <path d="M38 72 L16 42 Q12 36 20 32 Q26 29 31 36 L48 62" fill="#9CA3AF" stroke="#1F2937" stroke-width="3.5" stroke-linecap="round"/>
+                                <path d="M102 72 L124 42 Q128 36 120 32 Q114 29 109 36 L92 62" fill="#9CA3AF" stroke="#1F2937" stroke-width="3.5" stroke-linecap="round"/>
+                            </g>
+                            <!-- Jumping Body & Little Feet -->
+                            <path d="M44 76 L96 76 L102 110 L84 110 L82 124 L68 124 L68 110 L58 124 L44 124 L48 110 L38 110 Z" fill="#9CA3AF" stroke="#1F2937" stroke-width="3.5" stroke-linejoin="round"/>
+                            <ellipse cx="70" cy="96" rx="16" ry="14" fill="#F9FAFB"/>
+                            <!-- Happy Head -->
+                            <path d="M38 56 L36 26 L54 38 Q70 34 86 38 L104 26 L102 56 Q106 82 70 84 Q34 82 38 56 Z" fill="#9CA3AF" stroke="#1F2937" stroke-width="3.5" stroke-linejoin="round"/>
+                            <path d="M48 54 Q54 46 60 54" fill="none" stroke="#1F2937" stroke-width="3.5" stroke-linecap="round"/>
+                            <path d="M80 54 Q86 46 92 54" fill="none" stroke="#1F2937" stroke-width="3.5" stroke-linecap="round"/>
+                            <path d="M58 63 Q70 61 82 63 Q80 77 70 77 Q60 77 58 63 Z" fill="#F43F5E" stroke="#1F2937" stroke-width="2.8"/>
+                            <circle cx="46" cy="62" r="5" fill="#FDA4AF"/>
+                            <circle cx="94" cy="62" r="5" fill="#FDA4AF"/>
+                        </g>
+                        <!-- Sparkles -->
+                        <path d="M16 18 L19 25 L26 28 L19 31 L16 38 L13 31 L6 28 L13 25 Z" fill="#FACC15" stroke="#1F2937" stroke-width="1.5"/>
+                        <path d="M122 16 L124 21 L129 23 L124 25 L122 30 L120 25 L115 23 L120 21 Z" fill="#FACC15" stroke="#1F2937" stroke-width="1.5"/>
+                    </g>
+                </svg>`
+        };
+
+        const CAT_MEME_MESSAGES = {
+            bongo: "🥁 Bongo Cat is tapping & dancing a 22nd birthday beat for Chellakutty Ibrahim!!",
+            pop: "😮 POP! POP! POP! Pop Cat is amazed by my handsome pattukutty!",
+            kissy: "😘💖 Happy Kissy Thumbs Up Cat is sending endless kisses & hearts to thangakutty!",
+            polite: "🥺🌸 Cutie Polite Cat says: 'May you always choose your own happiness today, chellakutty!'",
+            maxwell: "🌀🎶 Maxwell the Loaf Cat is spinning 360° in celebration of Chapter 22 for pattukutty!",
+            happy: "🙌✨ HAPPY HAPPY HAPPY!! Doing the happy dance because it's thangakutty's day!!"
+        };
+
+        function renderAllCatStickers() {
+            document.querySelectorAll('[data-cat]').forEach(el => {
+                const type = el.getAttribute('data-cat');
+                if (CAT_MEME_SVGS[type]) {
+                    el.innerHTML = CAT_MEME_SVGS[type];
+                }
+            });
+        }
+
+        function spawnKissyHeartsBurst(x, y) {
+            const icons = ['😘', '💖', '💕', '💋', '🌷'];
+            for (let i = 0; i < 8; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'floating-kiss-heart';
+                heart.textContent = icons[i % icons.length];
+                const offsetX = (Math.random() - 0.5) * 110;
+                const offsetY = (Math.random() - 0.5) * 40;
+                heart.style.left = (x + offsetX) + 'px';
+                heart.style.top = (y + offsetY) + 'px';
+                heart.style.animationDelay = (i * 0.08) + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 1600);
+            }
+        }
+
+        function triggerCatMeme(type, element, event) {
+            // Play fun synthesized sound effect
+            playCatSound(type);
+
+            // Trigger turbo dance burst for 1.8 seconds
+            element.classList.remove('burst-action');
+            void element.offsetWidth;
+            element.classList.add('burst-action');
+            setTimeout(() => element.classList.remove('burst-action'), 1800);
+
+            // If kissy cat, launch floating kissy hearts from tap position
+            if (type === 'kissy' && event) {
+                const rect = element.getBoundingClientRect();
+                const cx = event.clientX || (rect.left + rect.width / 2);
+                const cy = event.clientY || (rect.top + rect.height / 2);
+                spawnKissyHeartsBurst(cx, cy);
+            }
+
+            showToast(CAT_MEME_MESSAGES[type] || "Meow! Happy 22nd Birthday Ibrahim! 🌷", CAT_MEME_SVGS[type]);
+            burstTulips(10);
+        }
+
+        /* =========================================================================
+           3. TOAST NOTIFICATION & FLOATING TULIP PETALS
+           ========================================================================= */
+        let toastTimeout;
+        function showToast(message, svgIconHtml = null) {
+            const toastBox = document.getElementById('toast-box');
+            const toastMsg = document.getElementById('toast-msg');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.textContent = message;
+            toastIcon.innerHTML = svgIconHtml ? svgIconHtml : '<span class="text-2xl">🌷</span>';
+
+            toastBox.classList.remove('toast-active');
+            void toastBox.offsetWidth;
+            toastBox.classList.add('toast-active');
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toastBox.classList.remove('toast-active');
+            }, 3400);
+        }
+
+        function spawnFloatingPetal(fastBurst = false) {
+            const container = document.getElementById('petal-container');
+            const petal = document.createElement('div');
+            petal.className = 'floating-petal';
+            const icons = ['🌷', '🌸', '✨', '💮', '💖'];
+            petal.textContent = icons[Math.floor(Math.random() * icons.length)];
+            petal.style.left = (Math.random() * 88 + 4) + 'vw';
+            petal.style.fontSize = (Math.random() * 14 + 16) + 'px';
+            const duration = fastBurst ? (Math.random() * 2 + 2.5) : (Math.random() * 6 + 7);
+            petal.style.animationDuration = duration + 's';
+            container.appendChild(petal);
+
+            setTimeout(() => petal.remove(), duration * 1000);
+        }
+
+        function burstTulips(count = 14) {
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => spawnFloatingPetal(true), i * 85);
+            }
+        }
+
+        function addCustomLoveNote() {
+            const titleInput = document.getElementById('new-note-title');
+            const bodyInput = document.getElementById('new-note-body');
+            const title = titleInput.value.trim();
+            const body = bodyInput.value.trim();
+
+            if (!body) {
+                showToast("Write a little note for chellakutty or thangakutty first! 🌷");
+                return;
+            }
+
+            const grid = document.getElementById('love-notes-grid');
+            const card = document.createElement('div');
+            card.className = 'dream-card rounded-3xl p-6 sm:p-7 relative hover:-translate-y-1 transition duration-300';
+            card.innerHTML = `
+                <div class="flex items-center justify-between mb-3">
+                    <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-bold">✦ Just From My Heart</span>
+                    <span class="text-xl">🌷</span>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-sunset-plum mb-2.5">${escapeHtml(title || "A Little Extra Love For You")}</h3>
+                <p class="text-sm text-sunset-plum/85 leading-relaxed whitespace-pre-line">${escapeHtml(body)}</p>
+            `;
+            grid.appendChild(card);
+
+            titleInput.value = '';
+            bodyInput.value = '';
+            showToast("Added your new note to the heart wall! 💖🌷");
+            burstTulips(8);
+        }
+
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        /* =========================================================================
+           4. SCRAPBOOK MEDIA LOADER (AUTO-LOAD OR FILE PICKER)
+           ========================================================================= */
+        function showLoadedMedia(mediaId, placeholderId) {
+            const mediaEl = document.getElementById(mediaId);
+            const placeholderEl = document.getElementById(placeholderId);
+            if (mediaEl && placeholderEl) {
+                mediaEl.classList.remove('hidden');
+                placeholderEl.classList.add('hidden');
+            }
+        }
+
+        function loadMedia(input, mediaElementId, placeholderId, isVideo) {
+            const file = input.files && input.files[0];
+            if (!file) return;
+
+            const url = URL.createObjectURL(file);
+            const mediaEl = document.getElementById(mediaElementId);
+            const placeholderEl = document.getElementById(placeholderId);
+
+            mediaEl.src = url;
+            mediaEl.classList.remove('hidden');
+            placeholderEl.classList.add('hidden');
+
+            if (isVideo) {
+                mediaEl.load();
+            }
+
+            showToast(`Loaded "${file.name}" into your scrapbook! 🌷📸`);
+            burstTulips(8);
+        }
+
+        /* =========================================================================
+           5. A POCKET FULL OF SUNSHINE: 10 QURANIC FLIP CARDS
+           ========================================================================= */
+        const QURAN_CARDS = [
+            {
+                situation: "When you're exhausted at the end of the day",
+                surah: "Surah Ash-Sharh • 94:5–6",
+                arabic: "فَإِنَّ مَعَ ٱلْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ ٱلْعُسْرِ يُسْرًا",
+                translation: "For indeed, with hardship [will be] ease. Indeed, with hardship [will be] ease.",
+                note: "Rest your tired mind, Ibrahim. Allah promises ease right alongside every heavy day—and I am always right here cheering for you."
+            },
+            {
+                situation: "When you feel like you've disappointed people",
+                surah: "Surah At-Tawbah • 9:129",
+                arabic: "حَسْبِىَ ٱللَّهُ لَآ إِلَـٰهَ إِلَّا هُوَ ۖ عَلَيْهِ تَوَكَّلْتُ ۖ وَهُوَ رَبُّ ٱلْعَرْشِ ٱلْعَظِيمِ",
+                translation: "Sufficient for me is Allah; there is no deity except Him. On Him I have relied, and He is the Lord of the Great Throne.",
+                note: "You don't have to carry the weight of pleasing every single person. If Allah knows the purity of your intentions, that is more than enough."
+            },
+            {
+                situation: "When everyone's expectations feel too heavy",
+                surah: "Surah Al-Ma'idah • 5:105",
+                arabic: "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُوا۟ عَلَيْكُمْ أَنفُسَكُمْ",
+                translation: "O you who have believed, upon you is [responsibility for] yourselves.",
+                note: "You are allowed to breathe, set boundaries, and take care of your own soul first without feeling guilty."
+            },
+            {
+                situation: "When you're stressed about your future & career",
+                surah: "Surah At-Talaq • 65:3",
+                arabic: "وَمَن يَتَوَكَّلْ عَلَى ٱللَّهِ فَهُوَ حَسْبُهُۥٓ ۚ إِنَّ ٱللَّهَ بَـٰلِغُ أَمْرِهِۦ",
+                translation: "And whoever relies upon Allah – then He is sufficient for him. Indeed, Allah will accomplish His purpose.",
+                note: "Your future is safe in Allah's hands, my love. You have worked so hard—every door meant for you will open at the exact right time."
+            },
+            {
+                situation: "When you forget to live for your own happiness",
+                surah: "Surah Al-Qasas • 28:77",
+                arabic: "وَلَا تَنسَ نَصِيبَكَ مِنَ ٱلدُّنْيَا",
+                translation: "And do not forget your share of the world.",
+                note: "Allah Himself reminds you not to forget your own joy in this life! Please choose what makes your heart smile today and every day."
+            },
+            {
+                situation: "When you worry things won't work out",
+                surah: "Surah Ad-Duha • 93:5",
+                arabic: "وَلَسَوْفَ يُعْطِيكَ رَبُّكَ فَتَرْضَىٰ",
+                translation: "And your Lord is going to give you, and you will be satisfied.",
+                note: "My favorite promise for your 22nd year: Allah will bless your kind heart until you are truly, deeply satisfied."
+            },
+            {
+                situation: "When your heart feels overwhelmed",
+                surah: "Surah Al-Baqarah • 2:286",
+                arabic: "لَا يُكَلِّفُ ٱللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+                translation: "Allah does not charge a soul except [with that within] its capacity.",
+                note: "You are never alone in what you carry. Take things one small step at a time—you are stronger than you know."
+            },
+            {
+                situation: "When you feel unseen or lonely",
+                surah: "Surah Ta-Ha • 20:46",
+                arabic: "قَالَ لَا تَخَافَآ ۖ إِنَّنِى مَعَكُمَآ أَسْمَعُ وَأَرَىٰ",
+                translation: "He said, 'Fear not. Indeed, I am with you both; I hear and I see.'",
+                note: "Even when the world feels loud and busy, Allah sees every quiet kindness you do—and I see you too, always."
+            },
+            {
+                situation: "When your mind feels restless",
+                surah: "Surah Ar-Ra'd • 13:28",
+                arabic: "أَلَا بِذِكْرِ ٱللَّهِ تَطْمَئِنُّ ٱلْقُلُوبُ",
+                translation: "Unquestionably, by the remembrance of Allah hearts are assured.",
+                note: "Whenever overthinking kicks in, pause for one quiet moment—may Allah fill your chest with stillness and peace."
+            },
+            {
+                situation: "Whenever you need a reminder to smile",
+                surah: "Surah Ibrahim • 14:7",
+                arabic: "لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
+                translation: "If you are grateful, I will surely increase you [in favor].",
+                note: "From Surah Ibrahim—named after you! Alhamdulillah for your life, your laugh, and the blessing of loving you."
+            }
+        ];
+
+        function renderQuranCards() {
+            const grid = document.getElementById('ayah-grid');
+            grid.innerHTML = QURAN_CARDS.map((card, idx) => `
+                <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner">
+                        <!-- Front: Situation + Arabic + Citation -->
+                        <div class="flip-card-front">
+                            <div class="w-full flex items-center justify-between gap-2 text-xs font-bold text-pink-600">
+                                <span class="text-left">☀️ ${card.situation}</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-pink-100/90 shrink-0">${card.surah}</span>
+                            </div>
+                            <p class="font-arabic text-2xl sm:text-3xl leading-loose text-sunset-plum font-bold px-2 my-auto" dir="rtl">
+                                ${card.arabic}
+                            </p>
+                            <div class="text-xs font-semibold text-sunset-plum/65 flex items-center gap-1.5">
+                                <span>🌷 Tap card for English translation & reminder</span>
+                            </div>
+                        </div>
+
+                        <!-- Back: Translation & Personal Note -->
+                        <div class="flip-card-back">
+                            <div class="w-full flex items-center justify-between text-xs font-bold text-amber-300">
+                                <span>${card.surah}</span>
+                                <span>🤲</span>
+                            </div>
+                            <div class="my-auto space-y-3 px-1">
+                                <p class="font-serif italic text-base sm:text-lg text-white leading-snug">
+                                    "${card.translation}"
+                                </p>
+                                <div class="h-px w-16 bg-amber-300/40 mx-auto"></div>
+                                <p class="text-xs sm:text-sm text-pink-100 leading-relaxed">
+                                    ${card.note}
+                                </p>
+                            </div>
+                            <span class="text-[11px] text-amber-200/80">Tap again to flip back 🌷</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        /* =========================================================================
+           6. INTERACTIVE BIRTHDAY CAKE CANDLES (WITH SMOKE WISPS & CONFETTI)
+           ========================================================================= */
+        let candlesLit = true;
+        function blowOutCandles() {
+            if (!candlesLit) return;
+            candlesLit = false;
+
+            document.getElementById('flame-1').classList.add('flame-out');
+            document.getElementById('flame-2').classList.add('flame-out');
+            document.getElementById('candle-glow').style.opacity = '0';
+
+            const s1 = document.getElementById('smoke-1');
+            const s2 = document.getElementById('smoke-2');
+            s1.classList.remove('smoke-active');
+            s2.classList.remove('smoke-active');
+            void s1.offsetWidth;
+            s1.classList.add('smoke-active');
+            s2.classList.add('smoke-active');
+
+            document.getElementById('cake-instruction').innerHTML =
+                "🎉 <strong>YAY!! Happy 22nd Birthday, Chellakutty Ibrahim!</strong> May every single wish you made for your happiness come true, my sweet pattukutty & thangakutty! 🌷💖";
+
+            document.getElementById('blow-btn').classList.add('hidden');
+            document.getElementById('relight-btn').classList.remove('hidden');
+
+            const closingLetter = document.getElementById('closing-letter');
+            if (closingLetter) {
+                closingLetter.classList.add('ring-4', 'ring-pink-300', 'bg-white');
+            }
+
+            playCatSound('happy');
+            showToast("🎂 Wish made! Happy 22nd Birthday Chellakutty Ibrahim!! 🌷✨", CAT_MEME_SVGS.happy);
+            burstTulips(26);
+        }
+
+        function relightCandles() {
+            candlesLit = true;
+            document.getElementById('flame-1').classList.remove('flame-out');
+            document.getElementById('flame-2').classList.remove('flame-out');
+            document.getElementById('smoke-1').classList.remove('smoke-active');
+            document.getElementById('smoke-2').classList.remove('smoke-active');
+            document.getElementById('candle-glow').style.opacity = '1';
+
+            document.getElementById('cake-instruction').textContent =
+                "Close your eyes, make a wish for your own happiness in your 22nd year, and tap the cake (or button) to blow out the \"22\" candles! 🌷✨";
+
+            document.getElementById('blow-btn').classList.remove('hidden');
+            document.getElementById('relight-btn').classList.add('hidden');
+
+            const closingLetter = document.getElementById('closing-letter');
+            if (closingLetter) {
+                closingLetter.classList.remove('ring-4', 'ring-pink-300', 'bg-white');
+            }
+        }
+
+        // Initialize Everything on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            renderAllCatStickers();
+            renderQuranCards();
+            setInterval(() => spawnFloatingPetal(false), 1800);
+        });
+    </script>
+</body>
+</html>
